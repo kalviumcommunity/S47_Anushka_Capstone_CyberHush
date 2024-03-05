@@ -3,7 +3,7 @@ import './App.css'
 import axios from "axios"
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState()
   useEffect(() => {
     axios.get("http://localhost:3005/")
     .then(response =>{
@@ -13,7 +13,7 @@ function App() {
 
   return (
     <>
-  <h1>{count}</h1>
+  <h1 style={{fontSize:"100px",textAlign:"center",}}>{count}</h1>
     </>
   )
 }
