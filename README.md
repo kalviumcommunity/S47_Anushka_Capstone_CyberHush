@@ -1,5 +1,8 @@
 # CyberHush: A platform for cybercrime awareness and reporting
 
+## Deployed Link
+Deployed Backend Server: https://s47-anushka-capstone-cyberhush.onrender.com/
+
 ## Description:
 
 The project Idea is to develop a cybercrime awareness and reporting application (CyberHush) that motivates users to educate themselves about cyber threats, seek assistance, and report incidents with any fear. 
