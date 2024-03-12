@@ -1,21 +1,16 @@
-import { useState,useEffect } from 'react'
-import './App.css'
-import axios from "axios"
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from "./component/Homepage.jsx";
+
 
 function App() {
-  const [count, setCount] = useState()
-  useEffect(() => {
-    axios.get("http://localhost:3005/")
-    .then(response =>{
-      setCount(response.data)
-    })
-  })
 
   return (
-    <>
-  <h1 style={{fontSize:"100px",textAlign:"center",}}>{count}</h1>
-    </>
-  )
+    <Router>
+      <Routes>
+        <Route path='/' element={<Home />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
