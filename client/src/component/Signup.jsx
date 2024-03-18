@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './Signup.css';
+import { Link } from 'react-router-dom';
 
 const RegistrationForm = () => {
   const [formData, setFormData] = useState({
-    Fullname: '',
-    Username: '',
+    Firstname: '',
+    Lastname: '',
     Email: '',
     Password: '',
     age: '',
-    gender: '',
-    location: '',
-    profilePic: ''
+    gender: ''
   });
 
   const handleChange = (e) => {
@@ -21,7 +21,7 @@ const RegistrationForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/registration', formData); // Adjust the URL as needed
+      await axios.post('http://localhost:5000/registration', formData);
       console.log('Registration successful!');
     } catch (error) {
       console.error('Registration error:', error.message);
@@ -29,20 +29,21 @@ const RegistrationForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="registration-form" onSubmit={handleSubmit}>
+      <h1>Sign Up</h1>
       <input
         type="text"
-        placeholder="Full Name"
-        name="Fullname"
-        value={formData.Fullname}
+        placeholder="First Name"
+        name="Firstname"
+        value={formData.Firstname}
         onChange={handleChange}
         required
       />
       <input
         type="text"
-        placeholder="Username"
-        name="Username"
-        value={formData.Username}
+        placeholder="Last Name"
+        name="Lastname"
+        value={formData.Lastname}
         onChange={handleChange}
         required
       />
@@ -63,7 +64,7 @@ const RegistrationForm = () => {
         required
       />
       <input
-        type="number"
+        type="text"
         placeholder="Age"
         name="age"
         value={formData.age}
@@ -81,22 +82,8 @@ const RegistrationForm = () => {
         <option value="Female">Female</option>
         <option value="Other">Other</option>
       </select>
-      <input
-        type="text"
-        placeholder="Location"
-        name="location"
-        value={formData.location}
-        onChange={handleChange}
-        required
-      />
-      <input
-        type="file"
-        placeholder="Profile Picture URL"
-        name="profilePic"
-        value={formData.profilePic}
-        onChange={handleChange}
-      />
       <button type="submit">Register</button>
+      <p>Already have an account?<Link to="/login">Login</Link></p>
     </form>
   );
 };
