@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 
 const Schema = new mongoose.Schema({
-    Fullname: { 
+    Firstname: { 
         type: String, 
         required: true 
     },
-    Username: { 
+    Lastname: { 
         type: String, 
         required: true
      },
@@ -31,14 +31,7 @@ const Schema = new mongoose.Schema({
     gender: {
          type: String,
           required: true 
-        },
-    location: {
-         type: String, 
-         required: true 
-        },
-    profilePic: {
-         type: String 
-        },
+        }
 });
 
 module.exports = mongoose.model("Registration", Schema)

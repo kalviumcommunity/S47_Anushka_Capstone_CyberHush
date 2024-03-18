@@ -2,7 +2,8 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
-const Registration = require('./Schema'); 
+const bcrypt = require('bcryptjs');
+const Registration = require('./models/Schema'); 
 
 const app = express();
 app.use(cors());
@@ -12,29 +13,51 @@ mongoose.connect(process.env.MONGODB_URI, { dbName: "Capstone"})
     .then(() => console.log("MongoDb is connected"))
     .catch((err) => console.error("MongoDb connection error:", err));
 
+app.post('/registration', async (req, res) => {
+    try {
+        const { Firstname, Lastname, Email, Password, age, gender } = req.body;
+        // Hash the password before saving it to the database
+        const hashedPassword = await bcrypt.hash(Password, 10);
+        const newRegistration = new Registration({ 
+            Firstname, Lastname, Email, Password: hashedPassword, age, gender
+        });
+        const savedRegistration = await newRegistration.save();
+        res.send(savedRegistration);
+    } catch (error) {
+        res.status(400).send(error.message);
+    }
+});
 
-    app.post('/registration', async (req, res) => {
-        try {
-            const { Fullname, Username, Email, Password, age, gender, location, profilePic } = req.body;
-            const newRegistration = new Registration({ 
-                Fullname, Username, Email, Password, age, gender, location, profilePic
-            });
-            const savedRegistration = await newRegistration.save();
-            res.send(savedRegistration);
-        } catch (error) {
-            res.status(400).send(error.message);
+app.post('/login', async (req, res) => {
+    try {
+        const { Email, Password } = req.body;
+        console.log(Email, Password);
+        // Find user by email
+        const user = await Registration.findOne({ Email });
+        if (!user) {
+            return res.status(400).json({ message: "Invalid credentials" });
         }
-    });
-    
-    app.get('/data', async (req, res) => {
-        try {
-            const registrations = await Registration.find();
-            res.json({ data: registrations });
-        } catch (error) {
-            res.status(500).json({ message: error.message });
+        // Check if the provided password matches the hashed password in the database
+        const isPasswordValid = await bcrypt.compare(Password, user.Password);
+        console.log(isPasswordValid);
+        if (!isPasswordValid) {
+            return res.status(400).json({ message: "Invalid credentials" });
         }
-    }); 
-    
-    const PORT = process.env.PORT || 5000;
-    app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
+        res.json({ message: "Login successful" });
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+});
+
+app.get('/data', async (req, res) => {
+    try {
+        const registrations = await Registration.find();
+        res.json({ data: registrations });
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+}); 
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
 

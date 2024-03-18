@@ -1,26 +1,24 @@
-.registration-form {
+.login-container {
     max-width: 400px;
-    margin: 30px auto;
-    padding: 25px;
+    margin: 50px auto;
+    padding: 35px;
     background-color: #f9f9f9;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   }
   
-  .registration-form h1 {
+  .login-container h1 {
     text-align: center;
     margin-bottom: 15px;
     margin-top: 1px;
     font-size: 30px;
   }
   
-  .registration-form input[type="text"],
-  .registration-form input[type="email"],
-  .registration-form input[type="password"],
-  .registration-form input[type="number"],
-  .registration-form select,
-  .registration-form button,
-  .registration-form input[type="file"] {
+  .input-container {
+    margin-bottom: 20px;
+  }
+  
+  .input-container input {
     width: 100%;
     padding: 10px;
     margin: 8px 0;
@@ -29,36 +27,41 @@
     border-radius: 5px;
     font-size: 14px;
   }
-  .registration-form button {
+  
+  .btn {
+    width: 100%;
+    padding: 10px;
     background-color: #007bff;
     color: #fff;
-    font-size: 18px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 18px;
   }
   
-  .registration-form button:hover {
+  .btn:hover {
     background-color: #0660c0ea;
+
   }
   
-  .registration-form input[type="file"] {
-    padding: 8px;
+  .error-msg {
+    color: #dc3545;
+    margin-top: 10px;
   }
   
-  .registration-form p {
+  .login-container p {
     text-align: center;
     margin-top: 10px;
     margin-bottom:1px;
     font-size: 18px;
   }
   
-  .registration-form p a {
+  .login-container p a {
     color: #007bff;
     text-decoration: none;
   }
   
-  .registration-form p a:hover {
+  .login-container p a:hover {
     text-decoration: underline;
   }
   
