@@ -9,9 +9,9 @@ function Home(){
       <div className="logo">Logo</div>
       <div className="nav-links">
         <Link to="/about">About</Link>
-        <a href="#">Contact</a>
-        <a href="#">FAQ</a>
-        <Link to="/signup">SignUp</Link>
+        <Link to="/faq">FAQ</Link>
+        <Link to="/contact">Contact</Link>
+        <Link to="/login">Login</Link>
       </div>
     </header>
     <div className="main">
