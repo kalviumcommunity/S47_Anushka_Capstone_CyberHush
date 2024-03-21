@@ -10,6 +10,18 @@ function About() {
   };
 
   return (
+    <>
+      <header className="navbar">
+      <div className="logo">Logo</div>
+      <div className="nav-links">
+      <Link to="/">Home</Link>
+
+        <Link to="/about">About</Link>
+        <Link to="/faq">FAQ</Link>
+        <Link to="/contact">Contact</Link>
+        <Link to="/login">Login</Link>
+      </div>
+    </header>
     <div className="about-container">
       <h1 className="title">
         Welcome to CyberHush – your trusted companion in the digital world!
@@ -49,6 +61,7 @@ function About() {
         </button>
       )}
     </div>
+    </>
   );
 }
 
