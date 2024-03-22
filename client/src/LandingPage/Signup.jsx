@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Signup.css";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const RegistrationForm = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     Firstname: "",
     Lastname: "",
@@ -20,12 +22,14 @@ const RegistrationForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      await axios.post("http://localhost:5000/registration", formData);
-      console.log("Registration successful!");
-    } catch (error) {
-      console.error("Registration error:", error.message);
-    }
+    axios.post("http://localhost:5000/registration", formData)
+      .then((response) => {
+        console.log(response.data);
+        navigate("/home");
+      })
+      .catch(error => {
+        console.log("Error" ,error);
+      })
   };
 
   return (
