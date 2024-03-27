@@ -48,9 +48,6 @@ function About() {
             Join us in the fight against cyber threats. Let's make the internet
             a safer place for all.
           </h2>
-          <Link to="/" className="go-back-link">
-            <button className="go-back-button">Go Back</button>
-          </Link>
         </>
       ) : (
         <button className="read-more-button" onClick={toggleContent}>
