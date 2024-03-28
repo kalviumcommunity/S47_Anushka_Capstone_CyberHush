@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Feedback.css';
 import { FaStar } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const FeedbackForm = () => {
   const [rating, setRating] = useState(0);
@@ -41,6 +42,17 @@ const FeedbackForm = () => {
 
   return (
     <div className="feedback-form">
+      <header className="navbar">
+      <div className="logo">Logo</div>
+      <div className="nav-links">
+        <Link to="/about">About</Link>
+        <Link to="/report">Report</Link>
+        <Link to="/education">Education</Link>
+        <Link to="/faq">FAQ</Link>
+        <Link to="/feedback">FeedBack</Link>
+        <Link to="/contact">Contact</Link>
+      </div>
+    </header>
       {submitted ? (
         <div className="success-message">
           <p>Thank you for your feedback!</p>
