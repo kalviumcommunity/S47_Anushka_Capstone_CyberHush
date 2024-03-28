@@ -8,7 +8,6 @@ function HomeP(){
     <header className="navbar">
       <div className="logo">Logo</div>
       <div className="nav-links">
-        <Link to="/about">About</Link>
         <Link to="/report">Report</Link>
         <Link to="/education">Education</Link>
         <Link to="/faq">FAQ</Link>
