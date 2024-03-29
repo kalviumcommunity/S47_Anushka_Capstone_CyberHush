@@ -2,36 +2,24 @@ const mongoose = require('mongoose');
 
 const Schema = new mongoose.Schema({
     Firstname: { 
-        type: String, 
-        required: true 
+        type: String
     },
     Lastname: { 
-        type: String, 
-        required: true
-     },
+        type: String
+    },
     Email: {
         type: String,
-        required: true,
-        unique: true,
-        validate: {
-            validator: (v) => {
-                return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
-            },
-            message: (props) => `${props.value} is not a valid email address!`,
-        },
+        unique: true
     },
     Password: { 
-        type: String, 
-        required: true 
+        type: String
     },
     age: { 
-        type: Number, 
-        required: true
-     },
+        type: Number
+    },
     gender: {
-         type: String,
-          required: true 
-        }
+        type: String
+    }
 });
 
-module.exports = mongoose.model("Registration", Schema)
+module.exports = mongoose.model("Registration", Schema);
