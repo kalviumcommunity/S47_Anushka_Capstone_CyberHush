@@ -4,6 +4,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const Registration = require('./models/Schema'); 
+const { registrationSchema, loginSchema } = require('./models/UserValidator');
 
 const app = express();
 app.use(cors());
@@ -15,8 +16,12 @@ mongoose.connect(process.env.MONGODB_URI, { dbName: "Capstone"})
 
 app.post('/registration', async (req, res) => {
     try {
+        const { error } = registrationSchema.validate(req.body);
+        if (error) {
+            return res.status(400).json({ message: error.details[0].message });
+        }
         const { Firstname, Lastname, Email, Password, age, gender } = req.body;
-        // Hash the password before saving it to the database
+         // Hash the password before saving it to the database
         const hashedPassword = await bcrypt.hash(Password, 10);
         const newRegistration = new Registration({ 
             Firstname, Lastname, Email, Password: hashedPassword, age, gender
@@ -30,16 +35,19 @@ app.post('/registration', async (req, res) => {
 
 app.post('/login', async (req, res) => {
     try {
+        const { error } = loginSchema.validate(req.body);
+        if (error) {
+            return res.status(400).json({ message: error.details[0].message });
+        }
         const { Email, Password } = req.body;
-        console.log(Email, Password);
         // Find user by email
+
         const user = await Registration.findOne({ Email });
         if (!user) {
             return res.status(400).json({ message: "Invalid credentials" });
         }
         // Check if the provided password matches the hashed password in the database
         const isPasswordValid = await bcrypt.compare(Password, user.Password);
-        console.log(isPasswordValid);
         if (!isPasswordValid) {
             return res.status(400).json({ message: "Invalid credentials" });
         }

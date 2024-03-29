@@ -10,8 +10,8 @@ function Contact() {
   const sendEmail = (e) => {
     e.preventDefault();
     emailjs
-      .sendForm("service_u7vx6yi", "template_sdey355", formRef.current, {
-        publicKey: "leL9fqJNkUBuZG27f",
+      .sendForm(`${import.meta.env.VITE_SECRET_KEY}`, `${import.meta.env.VITE_TEMPLATE_KEY}`, formRef.current, {
+        publicKey: `${import.meta.env.VITE_PUBLIC_KEY}`,
       })
       .then(
         (result) => {
