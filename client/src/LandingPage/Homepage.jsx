@@ -1,13 +1,13 @@
 import React from "react";
-import './Homepage.css'
+import styles from './Homepage.module.css'
 import { Link } from "react-router-dom";
 
 function Home(){
   return (
-    <>
-    <header className="navbar">
-      <div className="logo">Logo</div>
-      <div className="nav-links">
+    <div className={styles.container1}>
+    <header className={styles.navbar}>
+      <div className={styles.logo}>Logo</div>
+      <div className={styles.navLinks}>
         <Link to="/">Home</Link> 
         <Link to="/about">About</Link>
         <Link to="/faq">FAQ</Link>
@@ -15,14 +15,14 @@ function Home(){
         <Link to="/login">Login</Link>
       </div>
     </header>
-    <div className="main">
+    <div className={styles.main}>
       <h1>CyberHusk</h1>
-      <p>A good act does not wash out the bad, nor a bad act the good. Each should have its own reward</p>
+      <p>Actions, whether good or bad, retain their own consequences. One cannot <br></br>cleanse the other.Each merits its own consequence, its own <br></br>reward or repercussion, in the fabric of existence.</p>
       <Link to="/signup">
-        <button>Get Started ➡️</button>
+        <button className={styles.button}>Get Started ➡️</button>
       </Link>
     </div>
-    </>
+  </div>
   )
 }
 

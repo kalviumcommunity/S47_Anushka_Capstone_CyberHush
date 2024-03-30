@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "./Signup.css";
+import styles from "./Signup.module.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
@@ -33,16 +33,8 @@ const RegistrationForm = () => {
   };
 
   return (
-    <>
-      <header className="navbar">
-        <div className="logo">Logo</div>
-        <div className="nav-links">
-          <Link to="/about">About</Link>
-          <Link to="/faq">FAQ</Link>
-          <Link to="/contact">Contact</Link>
-        </div>
-      </header>
-      <form className="registration-form" onSubmit={handleSubmit}>
+    <div className={styles.container2}>
+      <form className={styles.registrationForm} onSubmit={handleSubmit}>
         <h1>Sign Up</h1>
         <input
           type="text"
@@ -100,7 +92,7 @@ const RegistrationForm = () => {
           Already have an account?<Link to="/login">Login</Link>
         </p>
       </form>
-    </>
+    </div>
   );
 };
 
