@@ -1,0 +1,91 @@
+.container3 {
+  background: linear-gradient(135deg, #007bff 0%, #00ffea 100%);
+  color: #fff;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+}
+.registrationForm {
+  max-width: 350px;
+  max-height: 700px;
+  padding: 50px 50px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  box-shadow: 0 30px 40px rgba(0, 0, 0, 0.1);
+  animation: fadeInDown 0.8s ease;
+}
+.registrationForm h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 2px;
+  font-size: 36px;
+  color: #003e80;
+  text-transform: uppercase;
+}
+
+.registrationForm input,
+.registrationForm select {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid #ddd;
+  border-radius:8px 0px 8px 0px;
+  font-size: 18px;
+  background-color: rgba(255, 255, 255, 0.589);
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.registrationForm input:focus,
+.registrationForm select:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.registrationForm button {
+  width: 80%;
+  padding: 10px;
+  margin-top: 20px;
+  margin-left: 40px;
+  background-color: #007bff;
+  color: #ffffffba;
+  font-size: 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.registrationForm button:hover {
+  background-color: #0056b3;
+}
+.registrationForm p {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 20px;
+  color: #333;
+}
+
+.registrationForm p a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.registrationForm p a:hover {
+  text-decoration: underline;
+  color: #0056b3;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
