@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { Link } from "react-router-dom";
+import "./Contact.css";
 
 function Contact() {
   const formRef = useRef();
@@ -10,9 +11,10 @@ function Contact() {
   const sendEmail = (e) => {
     e.preventDefault();
     emailjs
-      .sendForm(`${import.meta.env.VITE_SECRET_KEY}`, `${import.meta.env.VITE_TEMPLATE_KEY}`, formRef.current, {
-        publicKey: `${import.meta.env.VITE_PUBLIC_KEY}`,
-      })
+      .sendForm(`${import.meta.env.VITE_SECRET_KEY}`, `${import.meta.env.VITE_TEMPLATE_KEY}`,formRef.current,{
+          publicKey: `${import.meta.env.VITE_PUBLIC_KEY}`,
+        }
+      )
       .then(
         (result) => {
           console.log("Message sent successfully!");
@@ -26,47 +28,38 @@ function Contact() {
   };
 
   return (
-
-    
-    <div>
-        <header className="navbar">
-      <div className="logo">Logo</div>
-      <div className="nav-links">
-        <Link to="/about">About</Link>
-        <Link to="/faq">FAQ</Link>
-        <Link to="/contact">Contact</Link>
+    <div className="contact-container">
+      <header className="navbar">
+        <div className="logo">Logo</div>
+        <div className="navLinks">
+          <Link to="/about">About</Link>
+          <Link to="/faq">FAQ</Link>
+          <Link to="/contact">Contact</Link>
+        </div>
+      </header>
+        <div className="contact-form">
+          {submitted ? (
+            <p>Form submitted successfully!</p>
+          ) : (
+            <div>
+              <h1>Contact Us</h1>
+              <p>We're here to help. Reach out to us using the form below.</p>
+              <form ref={formRef} onSubmit={sendEmail}>
+                <label htmlFor="from_name">Name</label>
+                <input type="text" id="from_name" name="from_name" required />
+                <label htmlFor="from_email">Email</label>
+                <input type="email" id="from_email" name="from_email" required />
+                <label htmlFor="from_mobile">Mobile Number</label>
+                <input type="tel" id="from_mobile" name="from_mobile" pattern="[0-9]{10}" required />
+                <label htmlFor="message">Message</label>
+                <textarea id="message" name="message" required />
+                <input type="submit" value="Submit" />
+                {errorMessage && <p>{errorMessage}</p>}
+              </form>
+            </div>
+          )}
+        </div>
       </div>
-    </header>
-    <div>
-    {submitted ? (
-      <p>Form submitted successfully!</p>
-    ) : (
-      <div>
-        <h1>Contact Us</h1>
-        <p>We're here to help. Reach out to us using the form below.</p>
-        <form ref={formRef} onSubmit={sendEmail}>
-          <label htmlFor="from_name">Name</label>
-          <input type="text" id="from_name" name="from_name" required />
-          <label htmlFor="from_email">Email</label>
-          <input type="email" id="from_email" name="from_email" required />
-          <label htmlFor="from_mobile">Mobile Number</label>
-          <input
-            type="tel"
-            id="from_mobile"
-            name="from_mobile"
-            pattern="[0-9]{10}"
-            required
-          />
-          <label htmlFor="message">Message</label>
-          <textarea id="message" name="message" required />
-          <input type="submit" value="Submit" />
-          {errorMessage && <p>{errorMessage}</p>}
-        </form>
-      </div>
-    )}
-    </div>
-  </div>
-
   );
 }
 

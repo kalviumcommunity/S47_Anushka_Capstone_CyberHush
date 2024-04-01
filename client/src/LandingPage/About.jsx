@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "./About.css";
+import styles from "./About.module.css";
 
 function About() {
   const [showFullContent, setShowFullContent] = useState(false);
@@ -11,19 +11,19 @@ function About() {
 
   return (
     <>
-      <header className="navbar">
-      <div className="logo">Logo</div>
-      <div className="nav-links">
+      <header className={styles.navbar}>
+      <div className={styles.logo}>Logo</div>
+      <div className={styles.navLinks}>
         <Link to="/about">About</Link>
         <Link to="/faq">FAQ</Link>
         <Link to="/contact">Contact</Link>
       </div>
     </header>
-    <div className="about-container">
-      <h1 className="title">
+    <div className={styles.aboutContainer}>
+      <h1 className={styles.title}>
         Welcome to CyberHush – your trusted companion in the digital world!
       </h1>
-      <h2 className="subtitle">
+      <h2 className={styles.subtitle}>
         At CyberHush, we are committed to creating a safer online environment
         for everyone. With the rapid growth of cybercrime, it has become more
         crucial than ever to educate and empower individuals to protect
@@ -31,7 +31,7 @@ function About() {
       </h2>
       {showFullContent ? (
         <>
-          <h2 className="full-content">
+          <h2 className={styles.fullContent}>
             Our mission is simple: to raise awareness about cybercrimes and
             provide a platform for users to report incidents without fear or
             hesitation. We understand that navigating the complexities of
@@ -43,14 +43,12 @@ function About() {
             interface makes it easy to report cybercrime incidents you've
             experienced or witnessed, empowering you to make a difference in
             combating online threats.
-          </h2>
-          <h2 className="full-content">
             Join us in the fight against cyber threats. Let's make the internet
             a safer place for all.
           </h2>
         </>
       ) : (
-        <button className="read-more-button" onClick={toggleContent}>
+        <button className={styles.button} onClick={toggleContent}>
           Read More
         </button>
       )}
