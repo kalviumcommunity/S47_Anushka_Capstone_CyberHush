@@ -1,5 +1,5 @@
-import React from "react";
-import "./Education.css";
+import {React, useState} from "react";
+import styles from "./Education.module.css";
 import { Link } from "react-router-dom";
 
 const topics = [
@@ -16,7 +16,7 @@ const topics = [
   {
     id:3,
     title:"Child Abuse",
-    description: " behavior or neglect toward a child, including physical, sexual,emotional, or psychological mistreatment, usually by a parent or caregiver."
+    description: " Child abuse is an act of behavior or neglect toward a child, including physical, sexual,emotional, or psychological mistreatment, usually by a parent or caregiver."
   },
   {
     id:4,
@@ -111,11 +111,17 @@ const topics = [
 ];
 
 function Education() {
-    return (
-      <>
+  const [activeIndex, setActiveIndex] = useState(null);
+  const toggleDescription = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
+
+  return (
+    < div className={styles.educationBox}>
       <header className="navbar">
         <div className="logo">Logo</div>
         <div className="nav-links">
+          <Link to="/home">Home</Link>
           <Link to="/about">About</Link>
           <Link to="/report">Report</Link>
           <Link to="/education">Education</Link>
@@ -124,16 +130,19 @@ function Education() {
           <Link to="/contact">Contact</Link>
         </div>
       </header>
-      <div className="main">
+      <div className={styles.main}>
         {topics.map((topic, index) => (
-          <div key={topic.id}>
-            <h1>{`${index + 1}. ${topic.title}`}</h1>
-            <p>{topic.description}</p>
+          <div key={topic.id} className={`${styles.card} ${activeIndex === index ? styles.active : ''}`}>
+            <h1 className={styles.title} onClick={() => toggleDescription(index)}>
+              {`${index + 1}. ${topic.title}`}
+              <span className={`${styles.arrow} ${activeIndex === index ? styles.active : ''}`}>▶</span>
+            </h1>
+            <p className={styles.description}>{topic.description}</p>
           </div>
         ))}
       </div>
-      </>
-    );
+    </div>
+  );
   }
 
 export default Education

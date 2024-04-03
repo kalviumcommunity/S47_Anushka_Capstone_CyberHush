@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import styles from "./About.module.css";
+import Navbar from "./Navbar";
 
 function About() {
   const [showFullContent, setShowFullContent] = useState(false);
@@ -11,14 +11,7 @@ function About() {
 
   return (
     <>
-      <header className={styles.navbar}>
-      <div className={styles.logo}>Logo</div>
-      <div className={styles.navLinks}>
-        <Link to="/about">About</Link>
-        <Link to="/faq">FAQ</Link>
-        <Link to="/contact">Contact</Link>
-      </div>
-    </header>
+      <Navbar />
     <div className={styles.aboutContainer}>
       <h1 className={styles.title}>
         Welcome to CyberHush – your trusted companion in the digital world!
