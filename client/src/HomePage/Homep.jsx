@@ -1,6 +1,6 @@
 import React from "react";
-// import "../LandingPage/Homepage.css";
 import { Link } from "react-router-dom";
+import "./HomeP.css";
 
 function HomeP(){
   return (
@@ -15,11 +15,6 @@ function HomeP(){
         <Link to="/contact">Contact</Link>
       </div>
     </header>
-    <div className="main">
-      <h1>CyberHusk</h1>
-      <p>A good act does not wash out the bad, nor a bad act the good. Each should have its own reward.</p>
-
-    </div>
     </>
   )
 }

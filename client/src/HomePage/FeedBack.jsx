@@ -41,7 +41,7 @@ const FeedbackForm = () => {
   };
 
   return (
-    <div className="feedback-form">
+    <>
       <header className="navbar">
       <div className="logo">Logo</div>
       <div className="nav-links">
@@ -53,6 +53,8 @@ const FeedbackForm = () => {
         <Link to="/contact">Contact</Link>
       </div>
     </header>
+    <div className="feedback-form">
+
       {submitted ? (
         <div className="success-message">
           <p>Thank you for your feedback!</p>
@@ -142,6 +144,7 @@ const FeedbackForm = () => {
         </form>
       )}
     </div>
+    </>
   );
 };
 

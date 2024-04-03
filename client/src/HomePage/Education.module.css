@@ -1,0 +1,42 @@
+.main {
+    width:99.5%;
+    margin: 0 auto; 
+    margin-top: -40px;
+    margin-bottom: 20px;
+  }
+  
+  .card {
+    background-color: #d6cfcfa3;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 2px;
+  }
+  
+  .title {
+    padding-left: 25px;
+    margin-bottom:15px;
+    margin-top: 15px;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .description {
+    display: none;
+    padding: 10px;
+  }
+  
+  .arrow {
+    float: right;
+    margin-right: 10px;
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+  }
+  
+  .active .arrow {
+    transform: rotate(90deg);
+  }
+  
+  .active .description {
+    display: block;
+  }
