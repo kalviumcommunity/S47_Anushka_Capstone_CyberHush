@@ -24,7 +24,7 @@ const RegistrationForm = () => {
     e.preventDefault();
     axios.post("http://localhost:5000/registration", formData)
       .then((response) => {
-        console.log(response.data);
+        localStorage.setItem("token", response.data.token);
         navigate("/home");
       })
       .catch(error => {
