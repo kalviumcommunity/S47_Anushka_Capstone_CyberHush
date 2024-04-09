@@ -87,10 +87,16 @@ const RegistrationForm = () => {
           <option value="Female">Female</option>
           <option value="Other">Other</option>
         </select>
-        <button type="submit">Register</button>
+        <button className={styles.button} type="submit">Register</button>
         <p>
           Already have an account?<Link to="/login">Login</Link>
         </p>
+        <p className={styles.or}>
+          <span>or</span>
+        </p>
+        <button className={styles.GoogleButton} >
+          Sign In With Google
+        </button>
       </form>
     </div>
   );
