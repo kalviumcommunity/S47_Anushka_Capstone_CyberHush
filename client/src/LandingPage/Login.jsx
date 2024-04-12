@@ -24,7 +24,9 @@ function Login() {
         setError(error.response.data.message);
       });
   };
-
+  const loginwithgoogle = ()=>{
+    window.open("http://localhost:5000/auth/google/callback","_self")
+  }
   return (
     <div className={styles.container3}>
       <form className={styles.registrationForm} onSubmit={handleLogin}>
@@ -53,7 +55,7 @@ function Login() {
         <p className={styles.or}>
           <span>or</span>
         </p>
-        <button className={styles.GoogleButton} >
+        <button className={styles.GoogleButton} onClick={loginwithgoogle}>
           Sign In With Google
         </button>
       </form>
