@@ -1,3 +1,4 @@
+/* Main styling */
 .container3 {
   background: linear-gradient(135deg, #007bff 0%, #00ffea 100%);
   color: #fff;
@@ -7,19 +8,19 @@
   align-items: center;
   font-family: 'Poppins', sans-serif;
 }
+
 .registrationForm {
   max-width: 350px;
-  max-height: 700px;
-  padding: 50px 50px;
+  padding: 50px;
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 20px;
   box-shadow: 0 30px 40px rgba(0, 0, 0, 0.1);
   animation: fadeInDown 0.8s ease;
 }
+
 .registrationForm h1 {
   text-align: center;
-  margin-bottom: 20px;
-  margin-top: 2px;
+  margin: 2px 0 20px;
   font-size: 36px;
   color: #003e80;
   text-transform: uppercase;
@@ -27,45 +28,37 @@
 
 .registrationForm input,
 .registrationForm select {
-  width: 100%;
+  width: calc(100% - 24px);
   padding: 12px;
   margin: 8px 0;
   box-sizing: border-box;
   border: none;
   border-bottom: 2px solid #ddd;
-  border-radius:8px 0px 8px 0px;
+  border-radius: 8px;
   font-size: 18px;
   background-color: rgba(255, 255, 255, 0.589);
   transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
-.registrationForm input:focus,
-.registrationForm select:focus {
-  outline: none;
-  border-color: #007bff;
-}
-
-.registrationForm button {
-  width: 80%;
+.button {
+  width: 90%;
   padding: 10px;
-  margin-top: 20px;
-  margin-left: 40px;
+  margin: 20px auto 0;
   background-color: #007bff;
-  color: #ffffffba;
+  color: #fff;
   font-size: 25px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  display: block;
+  text-align: center;
 }
 
-.registrationForm button:hover {
-  background-color: #0056b3;
-}
 .registrationForm p {
   text-align: center;
-  margin-top: 15px;
-  font-size: 20px;
+  margin-top: 10px;
+  font-size: 16px;
   color: #333;
 }
 
@@ -88,4 +81,44 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+
+
+.or {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.or span {
+  padding: 0 10px;
+}
+
+.or::before,
+.or::after {
+  content: "";
+  display: inline-block;
+  width: 40%;
+  height: 1px;
+  background-color:gray;
+  vertical-align: middle;
+}
+
+/* Google Button styling */
+.GoogleButton {
+  transition: background-color .3s, box-shadow .3s;
+  cursor: pointer;
+  text-align: center;
+  width: 90%;
+  padding: 10px;
+  margin-left: 20px;
+  border: none;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  color: black;
+  font-size: 20px; 
+  font-family: 'Poppins', sans-serif;
+  background-color: rgba(255, 255, 255, 0.589);;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMTcuNiA5LjJsLS4xLTEuOEg5djMuNGg0LjhDMTMuNiAxMiAxMyAxMiAxMyAxMy42djIuMmgzYTguOCA4LjggMCAwIDAgMi42LTYuNnoiIGZpbGw9IiM0Mjg1RjQiIGZpbGwtcnVsZT0ibm9uemVybyIvPjxwYXRoIGQ9Ik05IDE4YzIuNCAwIDQuNS0uOCA2LTIuMmwtMy0yLjJhNS40IDUuNCAwIDAgMS04LTIuOUgxVjEzYTkgOSAwIDAgMCA4IDV6IiBmaWxsPSIjMzRBODUzIiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48cGF0aCBkPSJNNCAxMC43YTUuNCA1LjQgMCAwIDEgMC0zLjRWNUgxYTkgOSAwIDAgMCAwIDhsMy0yLjN6IiBmaWxsPSIjRkJCQzA1IiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48cGF0aCBkPSJNOSAzLjZjMS4zIDAgMi41LjQgMy40IDEuM0wxNSAyLjNBOSA5IDAgMCAwIDEgNWwzIDIuNGE1LjQgNS40IDAgMCAxIDUtMy43eiIgZmlsbD0iI0VBNDMzNSIgZmlsbC1ydWxlPSJub256ZXJvIi8+PHBhdGggZD0iTTAgMGgxOHYxOEgweiIvPjwvZz48L3N2Zz4=");
+  background-repeat: no-repeat;
+  background-position: 25px 13px;
 }

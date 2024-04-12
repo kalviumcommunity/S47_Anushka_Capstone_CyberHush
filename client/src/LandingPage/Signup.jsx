@@ -32,6 +32,10 @@ const RegistrationForm = () => {
       })
   };
 
+  const signupwithgoogle = ()=>{
+    window.open("http://localhost:5000/auth/google/callback","_self")
+  }
+
   return (
     <div className={styles.container2}>
       <form className={styles.registrationForm} onSubmit={handleSubmit}>
@@ -87,10 +91,16 @@ const RegistrationForm = () => {
           <option value="Female">Female</option>
           <option value="Other">Other</option>
         </select>
-        <button type="submit">Register</button>
+        <button className={styles.button} type="submit">Register</button>
         <p>
           Already have an account?<Link to="/login">Login</Link>
         </p>
+        <p className={styles.or}>
+          <span>or</span>
+        </p>
+        <button onClick={signupwithgoogle} className={styles.GoogleButton} >
+          Sign In With Google
+        </button>
       </form>
     </div>
   );

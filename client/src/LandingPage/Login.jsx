@@ -24,32 +24,40 @@ function Login() {
         setError(error.response.data.message);
       });
   };
-
+  const loginwithgoogle = ()=>{
+    window.open("http://localhost:5000/auth/google/callback","_self")
+  }
   return (
     <div className={styles.container3}>
       <form className={styles.registrationForm} onSubmit={handleLogin}>
-      <h1>Login</h1>
-          <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
+        <h1>Login</h1>
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
         <button type="submit" className={styles.button}>
           Login
         </button>
-      {error && <p className={styles.error}>{error}</p>}
-      <p>
-        Don't have an account? <Link to="/signup">Sign Up</Link>
-      </p>
+        {error && <p className={styles.error}>{error}</p>}
+        <p>
+          Don't have an account? <Link to="/signup">Sign Up</Link>
+        </p>
+        <p className={styles.or}>
+          <span>or</span>
+        </p>
+        <button className={styles.GoogleButton} onClick={loginwithgoogle}>
+          Sign In With Google
+        </button>
       </form>
     </div>
   );
