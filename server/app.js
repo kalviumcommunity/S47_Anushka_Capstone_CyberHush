@@ -139,7 +139,6 @@ app.get('/data', verifyToken, async (req, res) => {
     }
 });
 
-// Route for user login
 app.post('/login', async (req, res) => {
     try {
         const { error } = loginSchema.validate(req.body);
@@ -235,3 +234,4 @@ app.get('/report', async (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server started at port ${PORT}`);
 });
+
