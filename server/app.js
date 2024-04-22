@@ -202,7 +202,23 @@ app.post('/addreport', async (req, res) => {
     }
 });
 
-
+// Route to update a report
+app.put('/updatereport/:id', async (req, res) => {
+    try {
+        const { error } = report.validate(req.body);
+        if (error) {
+            return res.status(400).json({ message: error.details[0].message });
+        }
+        const { reportType, description, date, location, image, status } = req.body;
+        const updatedReport = await report.findByIdAndUpdate(req.params.id, {
+            reportType, description, date, location, image, status
+        }, { new: true });
+        res.send({ user: updatedReport });
+    } catch (error) {
+        console.error("Error in updating report:", error);
+        res.status(500).send(error.message);
+    }
+});
 
 // Route to fetch reports
 app.get('/report', async (req, res) => {
