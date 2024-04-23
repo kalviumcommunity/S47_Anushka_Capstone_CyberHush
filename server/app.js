@@ -139,7 +139,6 @@ app.get('/data', verifyToken, async (req, res) => {
     }
 });
 
-// Route for user login
 app.post('/login', async (req, res) => {
     try {
         const { error } = loginSchema.validate(req.body);
@@ -200,7 +199,7 @@ app.post('/addreport', upload.fields([{ name: 'image', maxCount: 1 }]), async (r
             image: newimage.image[0].path,
             status: newBody.status
         });
-        const savedReport = await newReport.save();
+      const savedReport = await newReport.save();
         res.send({ user: savedReport });
     } catch (error) {
         console.error("Error in adding report:", error);
@@ -241,3 +240,4 @@ app.get('/report', async (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server started at port ${PORT}`);
 });
+
