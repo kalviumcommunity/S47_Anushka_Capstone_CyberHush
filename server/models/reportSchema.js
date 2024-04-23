@@ -5,7 +5,7 @@ const reportSchema = new mongoose.Schema({
   description: String,
   date: Date,
   location: String,
-  image: String,
+  image: [{type:String}],
   status: String,
 });
 
