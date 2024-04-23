@@ -13,7 +13,7 @@ const jwt = require('jsonwebtoken');
 const Registration = require('./models/Schema'); 
 const { registrationSchema, loginSchema } = require('./models/UserValidator');
 const report = require('./models/reportSchema');
-
+const {upload} = require('./models/multer')
 const clientid = process.env.CLIENT_ID;
 const clientsecret = process.env.CLIENT_SECRET;
 
@@ -30,7 +30,7 @@ app.use(cors({
 }));
 
 app.use(express.json());
-
+app.use(express.static('../server'))
 // Set up session middleware
 app.use(session({
     secret: process.env.SESSION_SECRET,
@@ -184,15 +184,21 @@ app.post('/registration', async (req, res) => {
 });
 
 // Route to add a report
-app.post('/addreport', async (req, res) => {
+app.post('/addreport', upload.fields([{ name: 'image', maxCount: 1 }]), async (req, res) => {
     try {
         const { error } = report.validate(req.body);
         if (error) {
             return res.status(400).json({ message: error.details[0].message });
         }
-        const { reportType, description, date, location, image, status } = req.body;
+        const newBody = req.body
+        const newimage = req.files
         const newReport = new report({
-            reportType, description, date, location, image, status
+            reportType: newBody.reportType,
+            description: newBody.description,
+            date: newBody.date,
+            location: newBody.location,
+            image: newimage.image[0].path,
+            status: newBody.status
         });
         const savedReport = await newReport.save();
         res.send({ user: savedReport });
