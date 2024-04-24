@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import styles from "./Report.module.css";
+import { useNavigate } from "react-router-dom";
+
 
 function Report() {
   const [reports, setReports] = useState([]);
@@ -17,6 +19,16 @@ function Report() {
       });
   }, []);
 
+  const navigate = useNavigate();
+
+  const handleDelete = async (id) => {
+    try {
+      await axios.delete(`http://localhost:5000/deletereport/${id}`);
+      setReports(reports.filter((report) => report._id !== id));
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
 
   return (
@@ -62,10 +74,8 @@ function Report() {
             <div className={styles.reportInfo}>
               <p className={styles.reportStatus}>Status: {report.status}</p>
               <div className={styles.reportButtons} >
-                <Link to={`/edit/${report._id}`}>
-                    <button className={styles.editButton}>Update</button>
-                </Link>
-                <button className={styles.deleteButton} >
+                <button onClick={()=>{navigate(`/update/${report._id}`)}}>Update</button>
+                <button className={styles.deleteButton}  onClick={(e) => handleDelete(report._id)}>
                     Delete
                 </button>
               </div>
