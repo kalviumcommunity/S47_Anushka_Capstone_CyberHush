@@ -212,23 +212,6 @@ app.post('/addreport', upload.fields([{ name: 'image', maxCount: 1 }]), async (r
     }
 });
 
-// Route to update a report
-app.put('/updatereport/:id', async (req, res) => {
-    try {
-        const { error } = report.validate(req.body);
-        if (error) {
-            return res.status(400).json({ message: error.details[0].message });
-        }
-        const { reportType, description, date, location, image, status } = req.body;
-        const updatedReport = await report.findByIdAndUpdate(req.params.id, {
-            reportType, description, date, location, image, status
-        }, { new: true });
-        res.send({ user: updatedReport });
-    } catch (error) {
-        console.error("Error in updating report:", error);
-        res.status(500).send(error.message);
-    }
-});
 
 // Route to fetch reports
 app.get('/report', async (req, res) => {
@@ -238,6 +221,53 @@ app.get('/report', async (req, res) => {
     } catch (error) {
         console.error("Error in fetching reports:", error);
         res.status(500).json({ message: error.message });
+    }
+});
+
+// Route to update a report
+app.put('/updatereport/:id', async (req, res) => {
+    try {
+        const { error } = report.validate(req.body);
+        if (error) {
+            return res.status(400).json({ message: error.details[0].message });
+        }
+        const { reportType, description, date, location, status } = req.body;
+        const updatedReport = await report.findByIdAndUpdate(req.params.id, 
+            {
+            reportType, description, date, location, status
+        },
+         { new: true });
+        res.send({ user: updatedReport });
+    } catch (error) {
+        console.error("Error in updating report:", error);
+        res.status(500).send(error.message);
+    }
+});
+
+app.get('/updatereport/:id', async (req, res) => {
+    try {
+        const reportData = await report.findById(req.params.id);
+        if (!reportData) {
+            return res.status(404).json({ message: 'Report not found' });
+        }
+        res.json({ data: reportData });
+    } catch (error) {
+        console.error("Error in fetching report:", error);
+        res.status(500).json({ message: error.message });
+    }
+});
+
+// Route to delete a report
+app.delete('/deletereport/:id', async (req, res) => {
+    try {
+        const deletedReport = await report.findByIdAndDelete(req.params.id);
+        if (!deletedReport) {
+            return res.status(404).json({ message: 'Report not found' });
+        }
+        res.json({ message: 'Report deleted successfully' });
+    } catch (error) {
+        console.error("Error in deleting report:", error);
+        res.status(500).send(error.message);
     }
 });
 
