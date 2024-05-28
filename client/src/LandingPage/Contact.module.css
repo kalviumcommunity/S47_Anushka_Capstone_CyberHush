@@ -33,7 +33,7 @@ a {
 .navLinks a:hover {
   color: #007bff;
 }
-.contact-form {
+.formContainer {
   max-width: 450px;
   margin: 0 auto;
   padding: 2rem;
@@ -43,7 +43,7 @@ a {
   margin-bottom: 10px;
 }
 
-.contact-form h1 {
+.formContainer h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
   margin-top: 2px;
@@ -51,22 +51,22 @@ a {
   text-align: center;
 }
 
-.contact-form p {
+.formContainer p {
   font-size: 1.2rem;
   color: #555;
   margin-bottom: 1rem;
   text-align: center;
 }
 
-.contact-form label {
+.formContainer label {
   display: block;
   font-size: 1.2rem;
 }
 
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form input[type="tel"],
-.contact-form textarea {
+.formContainer input[type="text"],
+.formContainer input[type="email"],
+.formContainer input[type="tel"],
+.formContainer textarea {
   display: block;
   width: 100%;
   padding: 0.5rem;
@@ -76,11 +76,11 @@ a {
   margin-bottom: 0.5rem;
 }
 
-.contact-form textarea {
+.formContainer textarea {
   height: 100px;
 }
 
-.contact-form input[type="submit"] {
+.formContainer input[type="submit"] {
   background-color: #007bff;
   color: #fff;
   padding: 0.5rem 1.5rem;
@@ -91,11 +91,11 @@ a {
   transition: background-color 0.3s ease;
 }
 
-.contact-form input[type="submit"]:hover {
+.formContainer input[type="submit"]:hover {
   background-color: #0056b3;
 }
 
-.contact-form p.error {
+.formContainer p.error {
   color: #ff5733;
   font-size: 1.2rem;
   margin-top: 1rem;

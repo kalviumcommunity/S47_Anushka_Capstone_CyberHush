@@ -63,42 +63,46 @@ function ReportForm() {
 
   return (
     <div className={styles.addReport}>
-      <h1>Report</h1>
-      <form onSubmit={handleSubmit} method="post" encType="multipart/form-data">
-        <label htmlFor="reportType">Report Type:</label>
+      <h1 className={styles.title}>Report</h1>
+      <form onSubmit={handleSubmit} className={styles.form} encType="multipart/form-data">
+        <label htmlFor="reportType" className={styles.label}>Crime Type:</label>
         <input
           type="text"
           id="reportType"
           name="reportType"
           value={formData.reportType}
           onChange={handleChange}
+          className={styles.input}
         />
-        <label htmlFor="description">Description:</label>
+        <label htmlFor="description" className={styles.label}>Description:</label>
         <textarea
           id="description"
           name="description"
           value={formData.description}
           onChange={handleChange}
+          className={styles.textarea}
         />
-        <label htmlFor="date">Date:</label>
+        <label htmlFor="date" className={styles.label}>Date:</label>
         <input
           type="date"
           id="date"
           name="date"
           value={formData.date}
           onChange={handleChange}
+          className={styles.input}
         />
-        <label htmlFor="location">Location:</label>
+        <label htmlFor="location" className={styles.label}>Location:</label>
         <input
           type="text"
           id="location"
           name="location"
           value={formData.location}
           onChange={handleChange}
+          className={styles.input}
         />
-        <label htmlFor="image">Image:</label>
-        <input type="file" id="image" name="image" onChange={handleImageChange} />
-        <button type="submit">Submit</button>
+        <label htmlFor="image" className={styles.label}>Evidence (You cannot change the evidence after submitting):</label>
+        <input type="file" id="image" name="image" onChange={handleImageChange} className={styles.input} />
+        <button type="submit" className={styles.button}>Submit</button>
       </form>
     </div>
   );

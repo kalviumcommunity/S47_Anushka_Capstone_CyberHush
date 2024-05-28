@@ -14,17 +14,17 @@
     color: #fff;
   }
   
-  .nav-links {
+  .navLinks {
     display: flex;
   }
   
-  .nav-links a {
+  .navLinks a {
     color: #fff;
     text-decoration: none;
     margin-right: 20px;
   }
   
-  .nav-links a:hover {
+  .navLinks a:hover {
     text-decoration: underline;
   }
    
