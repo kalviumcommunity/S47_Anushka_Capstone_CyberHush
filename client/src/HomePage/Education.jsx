@@ -118,11 +118,10 @@ function Education() {
 
   return (
     < div className={styles.educationBox}>
-      <header className="navbar">
-        <div className="logo">Logo</div>
-        <div className="nav-links">
+      <header className={styles.navbar}>
+        <div className={styles.logo}>Logo</div>
+        <div className={styles.navLinks}>
           <Link to="/home">Home</Link>
-          <Link to="/about">About</Link>
           <Link to="/report">Report</Link>
           <Link to="/education">Education</Link>
           <Link to="/faq">FAQ</Link>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './Feedback.css';
 import { FaStar } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import styles from './Feedback.module.css';
 
 const FeedbackForm = () => {
   const [rating, setRating] = useState(0);
@@ -42,9 +42,9 @@ const FeedbackForm = () => {
 
   return (
     <>
-      <header className="navbar">
-      <div className="logo">Logo</div>
-      <div className="nav-links">
+      <header className={styles.navbar}>
+      <div className={styles.logo}>Logo</div>
+      <div className={styles.navLinks}>
         <Link to="/about">About</Link>
         <Link to="/report">Report</Link>
         <Link to="/education">Education</Link>
@@ -53,10 +53,10 @@ const FeedbackForm = () => {
         <Link to="/contact">Contact</Link>
       </div>
     </header>
-    <div className="feedback-form">
+    <div className={styles.FeedBackcontainer}>
 
       {submitted ? (
-        <div className="success-message">
+        <div className={styles.feedbackSubmitted}>
           <p>Thank you for your feedback!</p>
           <p>We hope you have a wonderful time at Cyberhusk.</p>
           <button onClick={handleNewFeedback}>Submit Another Feedback</button>
@@ -64,7 +64,7 @@ const FeedbackForm = () => {
       ) : (
         <form onSubmit={handleSubmit}>
           <h2>Feedback Form</h2>
-          <div className="form-group">
+          <div className={styles.groups}>
             <label>Rate us:</label>
             {[...Array(5)].map((_, i) => {
               const ratingValue = i + 1;
@@ -79,7 +79,7 @@ const FeedbackForm = () => {
             })}
           </div>
 
-          <div className="form-group">
+          <div className={styles.groups}>
             <label>Comments:</label>
             <textarea
               value={comments}
@@ -89,7 +89,7 @@ const FeedbackForm = () => {
             />
           </div>
 
-          <div className="form-group">
+          <div className={styles.groups}>
             <label>Do you recommend us?</label>
             <label>
               <input
@@ -113,7 +113,7 @@ const FeedbackForm = () => {
             </label>
           </div>
 
-          <div className="form-group">
+          <div className={styles.groups}>
             <label>Any improvements?</label>
             <input
               type="text"
@@ -124,7 +124,7 @@ const FeedbackForm = () => {
             />
           </div>
 
-          <div className="form-group">
+          <div className={styles.groups}>
             <label>How satisfied are you with our service?</label>
             <select
               value={selectedOption}

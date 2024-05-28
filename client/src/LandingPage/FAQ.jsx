@@ -11,11 +11,10 @@ function FAQ() {
 
   return (
     <>
-      <header className="navbar">
-        <div className="logo">Logo</div>
-        <div className="nav-links">
+      <header className={styles.navbar}>
+        <div className={styles.logo}>Logo</div>
+        <div className={styles.navLinks}>
           <Link to="/home">Home</Link>
-          <Link to="/about">About</Link>
           <Link to="/faq">FAQ</Link>
           <Link to="/contact">Contact</Link>
         </div>

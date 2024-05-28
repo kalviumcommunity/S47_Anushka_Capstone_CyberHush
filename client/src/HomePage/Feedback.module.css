@@ -14,21 +14,21 @@
     color: #fff;
   }
   
-  .nav-links {
+  .navLinks{
     display: flex;
   }
   
-  .nav-links a {
+  .navLinks a {
     color: #fff;
     text-decoration: none;
     margin-right: 20px;
   }
   
-  .nav-links a:hover {
+  .navLinks a:hover {
     text-decoration: underline;
   }
 /* Style for feedback form */
-.feedback-form {
+.FeedBackcontainer{
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
@@ -37,22 +37,22 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
   
-.feedback-form h2 {
+.FeedBackcontainer h2 {
     text-align: center;
     margin-bottom: 20px;
   }
   
-  .success-message {
+ .feedbackSubmitted{
     text-align: center;
     margin-top: 20px;
   }
   
-  .success-message p {
+  .feedbackSubmitted p {
     margin-bottom: 10px;
   }
   
   Style for form elements
-  .form-group {
+  .groups {
     margin-bottom: 20px;
   }
   
