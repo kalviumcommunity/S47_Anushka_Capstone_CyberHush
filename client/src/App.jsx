@@ -9,6 +9,8 @@ import Homep from "./HomePage/Homep.jsx";
 import Education from './HomePage/Education.jsx';
 import Report from './HomePage/Report.jsx';
 import FeedbackForm from './HomePage/FeedBack.jsx';
+import ReportForm from './HomePage/ReportForm.jsx';
+import UpdateReport from './HomePage/UpdateReport.jsx';
 
 function App() {
 
@@ -25,6 +27,8 @@ function App() {
         <Route path='/education' element={<Education />} />
         <Route path='/report' element={<Report />} />
         <Route path='/feedback' element={<FeedbackForm />} />
+        <Route path='/add' element={<ReportForm />} />
+        <Route path='/update/:id' element={<UpdateReport />} />
       </Routes>
     </Router>
   );

@@ -1,0 +1,108 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+}
+
+.navLinks {
+    display: flex;
+}
+
+.navLink {
+    margin-right: 20px;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navLink:hover {
+    color: #ffd700;
+}
+
+.activeButton {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.activeButton:hover {
+    background-color: #0056b3;
+}
+
+.reportCardContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px;
+    padding: 30px;
+    justify-content: center;
+}
+
+.reportCard {
+    height:auto;
+    background-color: rgba(210, 203, 203, 0.65); 
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.reportTitle {
+    font-size: 2rem;
+    color: #333;
+    text-align: center;
+}
+
+.reportDescription,
+.reportDate,
+.reportLocation {
+    color: #333;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.reportImage {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.reportInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.reportStatus {
+    color: #333;
+}
+
+.editButton,
+.deleteButton {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+}
+
+.editButton:hover,
+.deleteButton:hover {
+    background-color: #c82333;
+}
