@@ -6,6 +6,8 @@ Deployed Backend Server: https://s47-anushka-capstone-cyberhush.onrender.com/
 ## Low-fidelity design
 Link: https://www.figma.com/file/Vh8HMIgADhtIaW9G3NCffh/Untitled?type=design&node-id=0%3A1&mode=design&t=n6UFFjfDG6CDH5i9-1
 
+Prototype link: https://www.figma.com/design/Vh8HMIgADhtIaW9G3NCffh/Untitled?node-id=0-1&t=Qaj6nmOZPbTXwlDY-0
+
 ## Description:
 
 The project Idea is to develop a cybercrime awareness and reporting application (CyberHush) that motivates users to educate themselves about cyber threats, seek assistance, and report incidents with any fear. 
