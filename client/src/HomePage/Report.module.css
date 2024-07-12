@@ -27,6 +27,18 @@
     color: #ffd700;
 }
 
+.selectedUser{
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-bottom: -15px;
+    text-decoration: none;
+    font-size: 1.5rem;
+    width: 10%;
+}
+.select{
+    cursor: pointer;
+}
+
 .activeButton {
     background-color: #007bff;
     color: #fff;
@@ -90,7 +102,7 @@
     color: #333;
 }
 
-.editButton,
+.updateButton,
 .deleteButton {
     background-color: #dc3545;
     color: #fff;
@@ -102,7 +114,7 @@
     margin-left: 10px;
 }
 
-.editButton:hover,
+.updateButton:hover,
 .deleteButton:hover {
     background-color: #c82333;
 }

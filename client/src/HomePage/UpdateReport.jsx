@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import styles from './UpdateReport.module.css';
 
 function UpdateReport() {
     const [report, setReport] = useState({
@@ -46,45 +47,53 @@ function UpdateReport() {
     };
 
     return (
-        <div>
-            <h1>Update Report</h1>
+        <div className={styles['update-report-container']}>
+            <h1 className={styles['update-report-title']}>Update Report</h1>
             <form onSubmit={handleSubmit}>
-                <label>Report Type:</label>
+                <label className={styles['form-label']}>Report Type:</label>
                 <input
                     type="text"
                     name="reportType"
                     value={report.reportType}
                     onChange={handleChange}
+                    className={styles['form-input']}
                 />
-                <label>Description:</label>
+                <label className={styles['form-label']}>Description:</label>
                 <input
                     type="text"
                     name="description"
                     value={report.description}
                     onChange={handleChange}
+                    className={styles['form-input']}
                 />
-                <label>Date:</label>
+                <label className={styles['form-label']}>Date:</label>
                 <input
                     type="date"
                     name="date"
                     value={report.date}
                     onChange={handleChange}
+                    className={styles['form-input']}
                 />
-                <label>Location:</label>
+                <label className={styles['form-label']}>Location:</label>
                 <input
                     type="text"
                     name="location"
                     value={report.location}
                     onChange={handleChange}
+                    className={styles['form-input']}
                 />
-                <label>Status:</label>
-                <input
-                    type="text"
+                <label className={styles['form-label']}>Status:</label>
+                <select
                     name="status"
                     value={report.status}
                     onChange={handleChange}
-                />
-                <button type="submit">Update</button>
+                    className={styles['form-input']}
+                >
+                    <option value="pending">Pending</option>
+                    <option value="in-progress">In Progress</option>
+                    <option value="done">Done</option>
+                </select>
+                <button type="submit" className={styles['submit-button']}>Update</button>
             </form>
         </div>
     );

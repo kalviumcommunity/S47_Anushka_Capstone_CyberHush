@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { Link } from "react-router-dom";
-import "./Contact.css";
+import styles from "./Contact.module.css";
 
 function Contact() {
   const formRef = useRef();
@@ -28,16 +28,16 @@ function Contact() {
   };
 
   return (
-    <div className="contact-container">
-      <header className="navbar">
-        <div className="logo">Logo</div>
-        <div className="navLinks">
+    <div className={styles.container}>
+      <header className={styles.navbar}>
+        <div className={styles.logo}>Logo</div>
+        <div className={styles.navLinks}>
           <Link to="/about">About</Link>
           <Link to="/faq">FAQ</Link>
           <Link to="/contact">Contact</Link>
         </div>
       </header>
-        <div className="contact-form">
+        <div className={styles.formContainer}>
           {submitted ? (
             <p>Form submitted successfully!</p>
           ) : (
