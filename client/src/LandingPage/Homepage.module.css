@@ -1,127 +1,89 @@
 body {
     margin: 0;
 }
-.container1 {
-     /* background-color: #00246B;  */
-    background-color: #007bff;
-    color: #fff;
-    height: 100vh;
+.navbar {
     display: flex;
-    flex-direction: column;
-    font-family: 'Poppins', sans-serif;
-} 
-.main {
-    margin-top: 30px;
-    text-align: center;
-    animation: fadeIn 1s ease;
-}
-h1 {
-    font-size: 80px;
-    color: #fff;
-    margin-bottom: 30px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-}
-p {
-    font-size: 20px;
-    line-height: 1.6; 
-    color: #fff;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
-}
-.button {
-    background-color: rgba(255, 255, 255, 0.45);
-
-    color:black;
-    font-weight: 600;
-    margin-top: 30px;
-    padding: 15px 25px;
-    border: none;
-    border-radius: 5px;
-    font-size: 20px;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out;
-}
-
-.button:hover {
-    transform: scale(1.05); 
-    background-color:#CADCFC;
-    border: 2px solid  #ffffffa3 ;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0.5rem;
+    background-color: #002f6c;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo {
+    font-size: 1.7rem;
+    font-weight: bold;
+  }
+  
+  .navLinks {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+  }
+  
+  .link:hover {
+    border-radius: 4px; 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    background-color: rgb(209, 206, 206);
     color: black;
+    padding: 0rem 0.3rem;
+  }
+  .homepageContent{
+    background-color: #f0f0f0;
+    padding: 4rem 0;
+    text-align: center;
+    position: relative;
+    height: 70vh;
+  }
+.heroContent {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.heroTitle {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.heroText {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: #333;
 }
 
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.buttonstart {
+  background-color: #002f6c;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  margin-right: 35%;
+  margin-top: 3%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-@keyframes bounceIn {
-    from {
-        opacity: 0;
-        transform: scale(0.5);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+.buttonstart:hover {
+  background-color: white;
+  color: #002f6c;
+  border: #002f6c solid 1px;
 }
 
-@keyframes slideInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes slideInRight {
-    from {
-        opacity: 0;
-        transform: translateX(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
+.footer {
+  text-align: center;
+  background-color: #002f6ce3; /* Match navbar background */
+  color: white;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }

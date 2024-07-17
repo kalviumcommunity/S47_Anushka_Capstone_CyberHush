@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './Feedback.css';
 import { FaStar } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import styles from './FeedBack.module.css'; // Import your CSS module
 
 const FeedbackForm = () => {
   const [rating, setRating] = useState(0);
@@ -42,108 +42,110 @@ const FeedbackForm = () => {
 
   return (
     <>
-      <header className="navbar">
-      <div className="logo">Logo</div>
-      <div className="nav-links">
-        <Link to="/about">About</Link>
-        <Link to="/report">Report</Link>
-        <Link to="/education">Education</Link>
-        <Link to="/faq">FAQ</Link>
-        <Link to="/feedback">FeedBack</Link>
-        <Link to="/contact">Contact</Link>
-      </div>
-    </header>
-    <div className="feedback-form">
-
-      {submitted ? (
-        <div className="success-message">
-          <p>Thank you for your feedback!</p>
-          <p>We hope you have a wonderful time at Cyberhusk.</p>
-          <button onClick={handleNewFeedback}>Submit Another Feedback</button>
+      <header className={styles.navbar}>
+        <div className={styles.logo}>CyberHush</div>
+        <div className={styles.navLinks}>
+          <Link to="/home" className={styles.link}>Home</Link>
+          <Link to="/report" className={styles.link}>Report</Link>
+          <Link to="/education" className={styles.link}>Education</Link>
+          <Link to="/faq" className={styles.link}>FAQ</Link>
+          <Link to="/contact" className={styles.link}>Contact</Link>
         </div>
-      ) : (
-        <form onSubmit={handleSubmit}>
-          <h2>Feedback Form</h2>
-          <div className="form-group">
-            <label>Rate us:</label>
-            {[...Array(5)].map((_, i) => {
-              const ratingValue = i + 1;
-              return (
-                <FaStar
-                  key={i}
-                  className="star"
-                  color={ratingValue <= rating ? '#ffc107' : '#e4e5e9'}
-                  onClick={() => handleStarClick(ratingValue)}
+      </header>
+      <main className={styles.mainbox}>
+      <div className={styles.feedbackForm}>
+        {submitted ? (
+          <div className={styles.successMessage}>
+            <p>Thank you for your feedback!</p>
+            <p>We hope you have a wonderful time at Cyberhusk.</p>
+            <button className={styles.newFeedback} onClick={handleNewFeedback}>Submit Another Feedback</button>
+          </div>
+        ) : (
+          <form className={styles.form} onSubmit={handleSubmit}>
+            <h2>Feedback Form</h2>
+            <div className={styles.formGroup}>
+              <label>Rate us:</label>
+              {[...Array(5)].map((_, i) => {
+                const ratingValue = i + 1;
+                return (
+                  <FaStar
+                    key={i}
+                    className={styles.star}
+                    color={ratingValue <= rating ? '#ffc107' : '#e4e5e9'}
+                    onClick={() => handleStarClick(ratingValue)}
+                  />
+                );
+              })}
+            </div>
+
+            <div className={styles.formGroup}>
+              <label>Comments:</label>
+              <textarea
+                className={styles.comments}
+                value={comments}
+                onChange={(e) => setComments(e.target.value)}
+                placeholder="Enter your comments here..."
+                required
+              />
+            </div>
+
+            <div className={styles.formGroup}>
+              <label>Do you recommend us?</label>
+              <label className={styles.radioLabel}>
+                <input
+                  type="radio"
+                  value="true"
+                  checked={recommend === true}
+                  onChange={() => handleRecommendationChange('true')}
+                  required
                 />
-              );
-            })}
-          </div>
+                Yes
+              </label>
+              <label className={styles.radioLabel}>
+                <input
+                  type="radio"
+                  value="false"
+                  checked={recommend === false}
+                  onChange={() => handleRecommendationChange('false')}
+                  required
+                />
+                No
+              </label>
+            </div>
 
-          <div className="form-group">
-            <label>Comments:</label>
-            <textarea
-              value={comments}
-              onChange={(e) => setComments(e.target.value)}
-              placeholder="Enter your comments here..."
-              required
-            />
-          </div>
-
-          <div className="form-group">
-            <label>Do you recommend us?</label>
-            <label>
+            <div className={styles.formGroup}>
+              <label>Any improvements?</label>
               <input
-                type="radio"
-                value="true"
-                checked={recommend === true}
-                onChange={() => handleRecommendationChange('true')}
+                type="text"
+                className={styles.input}
+                value={improvements}
+                onChange={(e) => setImprovements(e.target.value)}
+                placeholder="Enter any improvements here..."
                 required
               />
-              Yes
-            </label>
-            <label>
-              <input
-                type="radio"
-                value="false"
-                checked={recommend === false}
-                onChange={() => handleRecommendationChange('false')}
+            </div>
+
+            <div className={styles.formGroup}>
+              <label>How satisfied are you with our service?</label>
+              <select
+                className={styles.select}
+                value={selectedOption}
+                onChange={(e) => setSelectedOption(e.target.value)}
                 required
-              />
-              No
-            </label>
-          </div>
-
-          <div className="form-group">
-            <label>Any improvements?</label>
-            <input
-              type="text"
-              value={improvements}
-              onChange={(e) => setImprovements(e.target.value)}
-              placeholder="Enter any improvements here..."
-              required
-            />
-          </div>
-
-          <div className="form-group">
-            <label>How satisfied are you with our service?</label>
-            <select
-              value={selectedOption}
-              onChange={(e) => setSelectedOption(e.target.value)}
-              required
-            >
-              <option value="">Select an option</option>
-              <option value="1">Very dissatisfied</option>
-              <option value="2">Dissatisfied</option>
-              <option value="3">Neutral</option>
-              <option value="4">Satisfied</option>
-              <option value="5">Very satisfied</option>
-            </select>
-          </div>
-
-          <button type="submit">Submit</button>
-        </form>
-      )}
-    </div>
+              >
+                <option value="">Select an option</option>
+                <option value="1">Very dissatisfied</option>
+                <option value="2">Dissatisfied</option>
+                <option value="3">Neutral</option>
+                <option value="4">Satisfied</option>
+                <option value="5">Very satisfied</option>
+              </select>
+            </div>
+            <button type="submit" lassName={styles.FormsubmitButton} >Submit</button>
+          </form>
+        )}
+      </div>
+    </main>
     </>
   );
 };

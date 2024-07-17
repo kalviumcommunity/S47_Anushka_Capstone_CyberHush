@@ -32,7 +32,7 @@ const RegistrationForm = () => {
       })
   };
 
-  const signupwithgoogle = ()=>{
+  const signupWithgoogle = ()=>{
     window.open("http://localhost:5000/auth/google/callback","_self")
   }
 
@@ -98,7 +98,7 @@ const RegistrationForm = () => {
         <p className={styles.or}>
           <span>or</span>
         </p>
-        <button onClick={signupwithgoogle} className={styles.GoogleButton} >
+        <button className={styles.GoogleButton} onClick={signupWithgoogle}>
           Sign In With Google
         </button>
       </form>

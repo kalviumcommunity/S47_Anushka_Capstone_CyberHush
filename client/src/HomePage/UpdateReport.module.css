@@ -1,9 +1,10 @@
 .homepageContent{
     padding: 2rem;
     background-color: #e7e8ea;
+    height: 90vh;
 }
-.addReport {
-    max-width: 700px;
+.updateReportContainer {
+    max-width: 650px;
     margin: 0 auto;
     padding: 20px;
     background-color: white;
@@ -11,40 +12,39 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.addReport h1 {
+.title {
     text-align: center;
     color: #002f6c;
-    font-size: 4rem;
+    font-size: 2.7rem;
     margin-top: 1px;
+    margin-top: 2px;
 }
 
-.addReport form {
+.form {
     display: flex;
     flex-direction: column;
 }
 
-.addReport label {
-    font-size: 1.3rem;
-    color: #002f6c;
+.formGroup {
+    margin-bottom: 10px;
 }
 
-.addReport input[type="text"],
-.addReport input[type="date"],
-.addReport input[type="file"],
-.addReport textarea {
+.label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #002f6c;
+    font-size: 1.2rem;
+}
+
+.input {
     padding: 5px;
-    margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    font-size: 1rem;
+    font-size: 01rem;
+    width: 95%;
 }
 
-.addReport textarea {
-    resize: vertical;
-    height: 20px;
-}
-
-.addReport button {
+.button {
     background-color: #002f6c;
     color: white;
     border: none;
@@ -53,12 +53,12 @@
     margin-bottom: 1%;
     cursor: pointer;
     padding: 10px 20px;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     transition: background-color 0.3s ease, transform 0.2s ease; /* Add scale effect on hover */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
-.addReport button:hover {
+.button:hover {
     background-color: white;
   color: #002f6c;
   border: #002f6c solid 1px;

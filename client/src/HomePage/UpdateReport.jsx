@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import styles from './UpdateReport.module.css';
 
 function UpdateReport() {
     const [report, setReport] = useState({
@@ -46,47 +47,69 @@ function UpdateReport() {
     };
 
     return (
-        <div>
-            <h1>Update Report</h1>
-            <form onSubmit={handleSubmit}>
-                <label>Report Type:</label>
-                <input
-                    type="text"
-                    name="reportType"
-                    value={report.reportType}
-                    onChange={handleChange}
-                />
-                <label>Description:</label>
-                <input
-                    type="text"
-                    name="description"
-                    value={report.description}
-                    onChange={handleChange}
-                />
-                <label>Date:</label>
-                <input
-                    type="date"
-                    name="date"
-                    value={report.date}
-                    onChange={handleChange}
-                />
-                <label>Location:</label>
-                <input
-                    type="text"
-                    name="location"
-                    value={report.location}
-                    onChange={handleChange}
-                />
-                <label>Status:</label>
-                <input
-                    type="text"
-                    name="status"
-                    value={report.status}
-                    onChange={handleChange}
-                />
-                <button type="submit">Update</button>
+        <>
+        <main className={styles.homepageContent}>
+        <div className={styles.updateReportContainer}>
+            <h1 className={styles.title}>Update Report</h1>
+            <form onSubmit={handleSubmit} className={styles.form}>
+                <div className={styles.formGroup}>
+                    <label className={styles.label}>Report Type:</label>
+                    <input
+                        type="text"
+                        name="reportType"
+                        value={report.reportType}
+                        onChange={handleChange}
+                        className={styles.input}
+                    />
+                </div>
+                <div className={styles.formGroup}>
+                    <label className={styles.label}>Description:</label>
+                    <input
+                        type="text"
+                        name="description"
+                        value={report.description}
+                        onChange={handleChange}
+                        className={styles.input}
+                    />
+                </div>
+                <div className={styles.formGroup}>
+                    <label className={styles.label}>Date:</label>
+                    <input
+                        type="date"
+                        name="date"
+                        value={report.date}
+                        onChange={handleChange}
+                        className={styles.input}
+                    />
+                </div>
+                <div className={styles.formGroup}>
+                    <label className={styles.label}>Location:</label>
+                    <input
+                        type="text"
+                        name="location"
+                        value={report.location}
+                        onChange={handleChange}
+                        className={styles.input}
+                    />
+                </div>
+                <div className={styles.formGroup}>
+                    <label className={styles.label}>Status:</label>
+                    <select
+                        name="status"
+                        value={report.status}
+                        onChange={handleChange}
+                        className={styles.input}
+                    >
+                        <option value="In-process">In-process</option>
+                        <option value="Pending">Pending</option>
+                        <option value="Done">Done</option>
+                    </select>
+                </div>
+                <button type="submit" className={styles.button}>Update</button>
             </form>
         </div>
+        </main>
+        </>
     );
 }
 
