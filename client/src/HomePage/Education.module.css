@@ -1,12 +1,50 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0.5rem;
+  background-color: #002f6c;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+.navLinks {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.link {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+.link:hover {
+  border-radius: 4px; /* Rounded corners for softer look */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  background-color: rgb(209, 206, 206);
+  color: black;
+  padding: 0rem 0.3rem;
+}
+
+.homepageContent{
+  background-color: #e7e8ea;
+  padding: 1rem;
+}
+
 .main {
-    width:99.5%;
+    width: 90%;
     margin: 0 auto; 
-    margin-top: -40px;
-    margin-bottom: 20px;
   }
   
   .card {
-    background-color: #d6cfcfa3;
+    background-color: white;
     border: 1px solid #ccc;
     border-radius: 5px;
     margin-bottom: 2px;
@@ -14,9 +52,10 @@
   
   .title {
     padding-left: 25px;
+    color: #002f6c;
     margin-bottom:15px;
     margin-top: 15px;
-    font-size: 25px;
+    font-size: 30px;
     font-weight: bold;
     cursor: pointer;
   }
@@ -24,6 +63,9 @@
   .description {
     display: none;
     padding: 10px;
+  color: #555;
+  font-size: 1.3rem;
+
   }
   
   .arrow {

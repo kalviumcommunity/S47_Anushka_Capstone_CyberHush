@@ -1,0 +1,159 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0.5rem;
+  background-color: #002f6c;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+.navLinks {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.link {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+.link:hover {
+  border-radius: 4px; /* Rounded corners for softer look */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  background-color: rgb(209, 206, 206);
+  color: black;
+  padding: 0rem 0.3rem;
+}
+
+/* Main Content */
+.homepageContent {
+  padding: 2rem;
+  background-color: #e7e8ea;
+}
+
+.heroSection {
+  text-align: center;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 12px; /* Rounded corners for softer look */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+.heroSection h1 {
+  font-size: 3rem; /* Larger heading for impact */
+  color: #002f6c;
+  margin-bottom: 1rem;
+}
+
+.heroSection p {
+  font-size: 1.7rem;
+  color: #555;
+  max-width: 800px; /* Limiting text width for better readability */
+  margin: 0 auto; /*Center aligning text */
+}
+
+.featuresSection {
+  text-align: center;
+  margin-bottom: 3rem; /* Increased margin for better separation */
+}
+
+.featuresSection h2 {
+  font-size: 2.5rem; 
+  color: #002f6c;
+  margin-bottom: 1.5rem; /* Increased margin */
+}
+
+.features {
+  display: flex;
+  justify-content: space-around;
+  gap: 3rem; /* Increased gap between features */
+}
+
+.feature {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 12px; /* Rounded corners for softer look */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  width: 45%;
+}
+
+.feature h3 {
+  font-size: 1.9rem; /* Larger heading for each feature */
+  color: #002f6c;
+  margin-bottom: 1rem;
+}
+
+.feature p {
+  font-size: 1.3rem; /* Slightly larger text for better readability */
+  color: #555;
+}
+
+.featureLink {
+  display: inline-block;
+  margin-top: 1.5rem; 
+  background-color: #002f6c;
+  border-radius: 12px;
+  padding: 0.5rem 1rem;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+.featureLink:hover {
+  background-color: white;
+  color: #002f6c;
+  border: #002f6c solid 1px;
+}
+
+.testimonialsSection {
+  text-align: center;
+  margin-bottom: 3rem; /* Increased margin for better separation */
+}
+
+.testimonialsSection h2 {
+  font-size: 2.5rem; 
+  color: #002f6c;
+  margin-bottom: 1.5rem; /* Increased margin */
+}
+
+.testimonials {
+  display: flex;
+  justify-content: space-around;
+  gap: 3rem; /* Increased gap between testimonials */
+}
+
+.testimonial {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 12px; /* Rounded corners for softer look */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  width: 45%;
+}
+
+.testimonial p {
+  font-size: 1.3rem; /* Slightly larger text for better readability */
+  color: #555;
+}
+
+.user {
+  margin-top: 1.5rem; /* Increased top margin for better spacing */
+  font-style: italic;
+  color: #002f6c;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 0.3rem;
+  background-color: #002f6c;
+  color: white;
+}

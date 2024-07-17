@@ -2,43 +2,39 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.navbar .logo {
-    font-size: 1.5rem;
-}
-
-.navLinks {
+    padding: 0.5rem 0.5rem;
+    background-color: #002f6c;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo {
+    font-size: 1.7rem;
+    font-weight: bold;
+  }
+  
+  .navLinks {
     display: flex;
-}
-
-.navLink {
-    margin-right: 20px;
-    color: #fff;
+    gap: 1.5rem;
+  }
+  
+  .link {
+    color: white;
     text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.navLink:hover {
-    color: #ffd700;
-}
-
-.activeButton {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.activeButton:hover {
-    background-color: #0056b3;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+  }
+  
+  .link:hover {
+    border-radius: 4px; /* Rounded corners for softer look */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    background-color: rgb(209, 206, 206);
+    color: black;
+    padding: 0rem 0.3rem;
+  }
+.homepageContent{
+    background-color: #e7e8ea;
+    padding: 2rem;
 }
 
 .reportCardContainer {
@@ -51,7 +47,7 @@
 
 .reportCard {
     height:auto;
-    background-color: rgba(210, 203, 203, 0.65); 
+    background-color: white; 
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -60,14 +56,14 @@
 
 .reportTitle {
     font-size: 2rem;
-    color: #333;
+    color:#002f6c;
     text-align: center;
 }
 
 .reportDescription,
 .reportDate,
 .reportLocation {
-    color: #333;
+    color:#002f6c;
     text-align: center;
     word-wrap: break-word;
 }
@@ -78,31 +74,39 @@
     object-fit: cover;
     object-position: center;
 }
-
 .reportInfo {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
+    text-align: center;
+    background-color: white; /* Slightly lighter background for contrast */
+    color: #002f6c;
 }
 
 .reportStatus {
-    color: #333;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+    color: #002f6c;
 }
 
-.editButton,
-.deleteButton {
-    background-color: #dc3545;
-    color: #fff;
+.reportButtons {
+    display: flex;
+    justify-content: center;
+    padding-right: 22%;
+}
+
+.reportButtons button {
+    background-color: #002f6c;
+    color: white;
     border: none;
-    padding: 8px 16px;
-    border-radius: 4px;
+    padding: 10px 20px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-left: 10px;
+    font-size: 1rem; /* Slightly larger font for readability */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Add scale effect on hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
-.editButton:hover,
-.deleteButton:hover {
-    background-color: #c82333;
+.reportButtons button:hover {
+    background-color: white;
+    color: #002f6c;
+    border: #002f6c solid 1px;
 }

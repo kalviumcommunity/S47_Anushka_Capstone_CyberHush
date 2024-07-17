@@ -117,19 +117,18 @@ function Education() {
   };
 
   return (
-    < div className={styles.educationBox}>
-      <header className="navbar">
-        <div className="logo">Logo</div>
-        <div className="nav-links">
-          <Link to="/home">Home</Link>
-          <Link to="/about">About</Link>
-          <Link to="/report">Report</Link>
-          <Link to="/education">Education</Link>
-          <Link to="/faq">FAQ</Link>
-          <Link to="/feedback">FeedBack</Link>
-          <Link to="/contact">Contact</Link>
+    <>
+      <header className={styles.navbar}>
+        <div className={styles.logo}>CyberHush</div>
+        <div className={styles.navLinks}>
+          <Link to="/home" className={styles.link}>Home</Link>
+          <Link to="/report" className={styles.link}>Report</Link>
+          <Link to="/faq" className={styles.link}>FAQ</Link>
+          <Link to="/feedback" className={styles.link}>Feedback</Link>
+          <Link to="/contact" className={styles.link}>Contact</Link>
         </div>
       </header>
+<main className={styles.homepageContent}>
       <div className={styles.main}>
         {topics.map((topic, index) => (
           <div key={topic.id} className={`${styles.card} ${activeIndex === index ? styles.active : ''}`}>
@@ -141,7 +140,8 @@ function Education() {
           </div>
         ))}
       </div>
-    </div>
+      </main>
+    </>
   );
   }
 

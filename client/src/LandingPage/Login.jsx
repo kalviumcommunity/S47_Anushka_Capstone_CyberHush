@@ -24,10 +24,13 @@ function Login() {
         setError(error.response.data.message);
       });
   };
-  const loginwithgoogle = ()=>{
-    window.open("http://localhost:5000/auth/google/callback","_self")
-  }
+
+  const loginWithGoogle = () => {
+    window.open("http://localhost:5000/auth/google/callback", "_self");
+  };
+
   return (
+    < div className={styles.containermain}>
     <div className={styles.container3}>
       <form className={styles.registrationForm} onSubmit={handleLogin}>
         <h1>Login</h1>
@@ -43,7 +46,7 @@ function Login() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button type="submit" className={styles.button}>
+        <button type="submit" className={styles.buttonlogin}>
           Login
         </button>
         {error && <p className={styles.error}>{error}</p>}
@@ -53,10 +56,11 @@ function Login() {
         <p className={styles.or}>
           <span>or</span>
         </p>
-        <button className={styles.GoogleButton} onClick={loginwithgoogle}>
+        <button className={styles.GoogleButton} onClick={loginWithGoogle}>
           Sign In With Google
         </button>
       </form>
+    </div>
     </div>
   );
 }

@@ -62,6 +62,8 @@ function ReportForm() {
   };
 
   return (
+    <>
+    <main className={styles.homepageContent}>
     <div className={styles.addReport}>
       <h1>Report</h1>
       <form onSubmit={handleSubmit} method="post" encType="multipart/form-data">
@@ -101,6 +103,8 @@ function ReportForm() {
         <button type="submit">Submit</button>
       </form>
     </div>
+    </main>
+    </>
   );
 }
 

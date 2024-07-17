@@ -1,6 +1,5 @@
 .container2 {
-  background: linear-gradient(135deg, #007bff 0%, #00ffea 100%);
-  height: 100vh;
+  background-color: #e7e8ea;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,8 +7,10 @@
 }
 
 .registrationForm {
-  max-width: 400px;
-  padding: 20px 50px;
+  max-width: 450px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 50px;
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 20px;
   box-shadow: 0 30px 40px rgba(0, 0, 0, 0.1);
@@ -18,16 +19,15 @@
 
 .registrationForm h1 {
   text-align: center;
-  margin-bottom: 5px;
-  margin-top: 2px;
-  font-size: 30px;
+  margin: 2px 0 20px;
+  font-size: 36px;
   color: #003e80;
   text-transform: uppercase;
 }
 
 .registrationForm input,
 .registrationForm select {
-  width: 100%;
+  width: calc(100% - 24px);
   padding: 12px;
   margin: 8px 0;
   box-sizing: border-box;
@@ -39,19 +39,31 @@
   transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
+.registrationForm input:focus,
+.registrationForm select:focus {
+  border-color: #003e80;
+  background-color: rgba(255, 255, 255, 0.8);
+}
 
 .button {
-  width: 95%;
-  padding: 15px;
-  margin-top: 20px;
-  margin-left:8px; 
-  background-color: #007bff;
-  color: #ffffffba;
-  font-size: 25px;
+  width: 90%;
+  padding: 10px;
+  margin: 20px auto 0;
+  background-color:#003e80;
+  color: #fff;
+  font-size: 1.2rem;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  display: block;
+  text-align: center;
+}
+
+.button:hover {
+  background-color: white;
+  color: #003e80;
+  border: 1px solid #003e80;
 }
 
 .registrationForm p {
@@ -62,11 +74,13 @@
 }
 
 .registrationForm p a {
-margin-left: 5px;
+  color:#003e80;
+  text-decoration: none;
 }
 
 .registrationForm p a:hover {
   text-decoration: underline;
+  color: #0056b3;
 }
 
 @keyframes fadeInDown {
@@ -83,6 +97,7 @@ margin-left: 5px;
 .or {
   text-align: center;
 }
+
 .or span {
   padding: 0 10px;
 }
@@ -93,25 +108,33 @@ margin-left: 5px;
   display: inline-block;
   width: 40%;
   height: 1px;
-  background-color:gray;
+  background-color: gray;
   vertical-align: middle;
-}
+} 
 
-/* Google Button styling */
 .GoogleButton {
   transition: background-color .3s, box-shadow .3s;
   cursor: pointer;
   text-align: center;
   width: 90%;
+  margin-top: 5px;
+  margin-bottom: 5px;
   padding: 10px;
   margin-left: 20px;
   border: none;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   color: black;
   font-size: 20px; 
+  margin-bottom: 5px;
   font-family: 'Poppins', sans-serif;
-  background-color: rgba(255, 255, 255, 0.589);;
+  background-color: rgba(255, 255, 255, 0.589);
   background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMTcuNiA5LjJsLS4xLTEuOEg5djMuNGg0LjhDMTMuNiAxMiAxMyAxMiAxMyAxMy42djIuMmgzYTguOCA4LjggMCAwIDAgMi42LTYuNnoiIGZpbGw9IiM0Mjg1RjQiIGZpbGwtcnVsZT0ibm9uemVybyIvPjxwYXRoIGQ9Ik05IDE4YzIuNCAwIDQuNS0uOCA2LTIuMmwtMy0yLjJhNS40IDUuNCAwIDAgMS04LTIuOUgxVjEzYTkgOSAwIDAgMCA4IDV6IiBmaWxsPSIjMzRBODUzIiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48cGF0aCBkPSJNNCAxMC43YTUuNCA1LjQgMCAwIDEgMC0zLjRWNUgxYTkgOSAwIDAgMCAwIDhsMy0yLjN6IiBmaWxsPSIjRkJCQzA1IiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48cGF0aCBkPSJNOSAzLjZjMS4zIDAgMi41LjQgMy40IDEuM0wxNSAyLjNBOSA5IDAgMCAwIDEgNWwzIDIuNGE1LjQgNS40IDAgMCAxIDUtMy43eiIgZmlsbD0iI0VBNDMzNSIgZmlsbC1ydWxlPSJub256ZXJvIi8+PHBhdGggZD0iTTAgMGgxOHYxOEgweiIvPjwvZz48L3N2Zz4=");
   background-repeat: no-repeat;
   background-position: 25px 13px;
+}
+
+.GoogleButton:hover {
+  background-color: white;
+  color:#003e80;
+  border: #003e80 1px solid;
 }

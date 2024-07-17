@@ -11,15 +11,7 @@ function FAQ() {
 
   return (
     <>
-      <header className="navbar">
-        <div className="logo">Logo</div>
-        <div className="nav-links">
-          <Link to="/home">Home</Link>
-          <Link to="/about">About</Link>
-          <Link to="/faq">FAQ</Link>
-          <Link to="/contact">Contact</Link>
-        </div>
-      </header>
+      <main className={styles.mainpage}>
       <div className={styles.container}>
         <h1 className={styles.title}>Frequently Asked Questions</h1>
         <div className={styles.main}>
@@ -102,6 +94,7 @@ function FAQ() {
             )}
         </div>
       </div>
+    </main>
     </>
   );
 }

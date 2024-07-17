@@ -1,6 +1,5 @@
-/* Main styling */
 .container3 {
-  background: linear-gradient(135deg, #007bff 0%, #00ffea 100%);
+  background-color: #e7e8ea;
   color: #fff;
   height: 100vh;
   display: flex;
@@ -40,11 +39,11 @@
   transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
-.button {
+.buttonlogin {
   width: 90%;
   padding: 10px;
   margin: 20px auto 0;
-  background-color: #007bff;
+  background-color:#003e80;
   color: #fff;
   font-size: 25px;
   border: none;
@@ -55,6 +54,11 @@
   text-align: center;
 }
 
+.buttonlogin:hover {
+  background-color: white;
+  color: #003e80;
+  border: 1px solid #003e80;
+}
 .registrationForm p {
   text-align: center;
   margin-top: 10px;
@@ -63,7 +67,7 @@
 }
 
 .registrationForm p a {
-  color: #007bff;
+  color:#003e80;
   text-decoration: none;
 }
 
@@ -102,9 +106,8 @@
   height: 1px;
   background-color:gray;
   vertical-align: middle;
-}
+} 
 
-/* Google Button styling */
 .GoogleButton {
   transition: background-color .3s, box-shadow .3s;
   cursor: pointer;
@@ -121,4 +124,10 @@
   background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNMTcuNiA5LjJsLS4xLTEuOEg5djMuNGg0LjhDMTMuNiAxMiAxMyAxMiAxMyAxMy42djIuMmgzYTguOCA4LjggMCAwIDAgMi42LTYuNnoiIGZpbGw9IiM0Mjg1RjQiIGZpbGwtcnVsZT0ibm9uemVybyIvPjxwYXRoIGQ9Ik05IDE4YzIuNCAwIDQuNS0uOCA2LTIuMmwtMy0yLjJhNS40IDUuNCAwIDAgMS04LTIuOUgxVjEzYTkgOSAwIDAgMCA4IDV6IiBmaWxsPSIjMzRBODUzIiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48cGF0aCBkPSJNNCAxMC43YTUuNCA1LjQgMCAwIDEgMC0zLjRWNUgxYTkgOSAwIDAgMCAwIDhsMy0yLjN6IiBmaWxsPSIjRkJCQzA1IiBmaWxsLXJ1bGU9Im5vbnplcm8iLz48cGF0aCBkPSJNOSAzLjZjMS4zIDAgMi41LjQgMy40IDEuM0wxNSAyLjNBOSA5IDAgMCAwIDEgNWwzIDIuNGE1LjQgNS40IDAgMCAxIDUtMy43eiIgZmlsbD0iI0VBNDMzNSIgZmlsbC1ydWxlPSJub256ZXJvIi8+PHBhdGggZD0iTTAgMGgxOHYxOEgweiIvPjwvZz48L3N2Zz4=");
   background-repeat: no-repeat;
   background-position: 25px 13px;
+}
+
+.GoogleButton:hover{
+  background-color: white;
+  color:#003e80;
+  border: #003e80 1px solid;
 }
